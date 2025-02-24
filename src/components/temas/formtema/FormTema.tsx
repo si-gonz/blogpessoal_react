@@ -68,7 +68,7 @@ function FormTema() {
                 if (error.toString().includes('403')) {
                     handleLogout();
                 } else {
-                    ToastAlerta('Erro ao atualizar o tema.')
+                    ToastAlerta('Erro ao atualizar o tema.', 'erro')
                 }
 
             }
@@ -77,7 +77,7 @@ function FormTema() {
                 await cadastrar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 })
-                ToastAlerta('O Tema foi cadastrado com sucesso!')
+                ToastAlerta('O Tema foi cadastrado com sucesso!', 'sucesso')
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout();
